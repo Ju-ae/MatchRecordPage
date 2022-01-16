@@ -6,6 +6,7 @@ const Auth = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [newAccount, setNewAccount] = useState(true);
+    const [error, setError] = useState("");
 
     const onChange = (event) => {
         const { target: { name, value } } = event;
@@ -23,16 +24,13 @@ const Auth = () => {
         let data;
         try {
             if (newAccount) {
-                // data = await authService.createUserWithEmailAndPassword(email, password);
                 data = await createUserWithEmailAndPassword(authService, email, password);
                 setNewAccount(false);
             } else {
                 data = await signInWithEmailAndPassword(authService, email, password);
-                // data = await authService.signInWithEmailAndPassword(email, password);
             }
-            console.log(data);
         } catch (error) {
-            console.log("error" + error); 
+            setError(error.message);
         }
     }
     return (
@@ -40,8 +38,8 @@ const Auth = () => {
             <form onSubmit={onSubmit}>
                 <input name="email" type="text" placeholder="email" required value={email} onChange={onChange} />
                 <input name="password" type="password" placeholder="password" required value={password} onChange={onChange} />
-                <input type="submit" value="login" />
                 <input type="submit" value={newAccount ? "Create Account" : "Log In"} />
+                {error}
             </form>
             <div>
                 <button>continue with google</button>

@@ -37,6 +37,7 @@ const Auth = () => {
     const toggleAccount = (event) =>{
         setNewAccount(!newAccount);
     }
+    
     return (
         <div>
             <form onSubmit={onSubmit}>
@@ -47,9 +48,10 @@ const Auth = () => {
             </form>
             <span onClick={toggleAccount}>{newAccount? "Log In" : "Create Account"}</span>
             <div>
-                <button>continue with google</button>
+                <button>continue with google</button>x
             </div>
         </div>
     );
 }
+
 export default Auth;

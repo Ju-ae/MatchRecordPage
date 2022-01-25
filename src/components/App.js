@@ -24,7 +24,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <>  
       {init ?
         (
           <AppRouter isLoggedIn={isLoggedIn} />

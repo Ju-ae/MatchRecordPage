@@ -1,3 +1,4 @@
+import { addDoc, collection, collectionGroup, CollectionReference, doc, setDoc } from "firebase/firestore";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Auth from "./Auth";
@@ -19,7 +20,6 @@ const Home = ({ login }) => {
                 <>
                     {auth ? <Auth /> :  <button onClick={onClick}>login</button>}
                 </>
-
             }
             <Intro />
         </div>

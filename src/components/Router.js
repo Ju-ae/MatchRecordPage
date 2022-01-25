@@ -8,12 +8,12 @@ const AppRouter= ({isLoggedIn}) =>{
 
 {console.log("approuter reload");}
     return (
-        <Router>
+        <Router basename={process.env.PUBLIC_URL} >
             <Switch>
                 <Route path="/inputmatch">
                     <InputMatch />
                 </Route>
-                <Route exact path="/">
+                <Route path="/">
                     <Home login={isLoggedIn} />
                 </Route>
             </Switch>

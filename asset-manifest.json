@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/MatchRecordPage/static/js/main.51e772ec.js",
+    "main.js": "/MatchRecordPage/static/js/main.917570dd.js",
     "static/media/profile.jpeg": "/MatchRecordPage/static/media/profile.31a609c5e0a31d8655f7.jpeg",
     "index.html": "/MatchRecordPage/index.html",
-    "main.51e772ec.js.map": "/MatchRecordPage/static/js/main.51e772ec.js.map"
+    "main.917570dd.js.map": "/MatchRecordPage/static/js/main.917570dd.js.map"
   },
   "entrypoints": [
-    "static/js/main.51e772ec.js"
+    "static/js/main.917570dd.js"
   ]
 }

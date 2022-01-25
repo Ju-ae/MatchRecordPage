@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/matchrecordpage/static/js/main.ba9f1538.js",
-    "static/media/profile.jpeg": "/matchrecordpage/static/media/profile.31a609c5e0a31d8655f7.jpeg",
-    "index.html": "/matchrecordpage/index.html",
-    "main.ba9f1538.js.map": "/matchrecordpage/static/js/main.ba9f1538.js.map"
+    "main.js": "/MatchRecordPage/static/js/main.51e772ec.js",
+    "static/media/profile.jpeg": "/MatchRecordPage/static/media/profile.31a609c5e0a31d8655f7.jpeg",
+    "index.html": "/MatchRecordPage/index.html",
+    "main.51e772ec.js.map": "/MatchRecordPage/static/js/main.51e772ec.js.map"
   },
   "entrypoints": [
-    "static/js/main.ba9f1538.js"
+    "static/js/main.51e772ec.js"
   ]
 }

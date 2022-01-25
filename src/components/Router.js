@@ -4,20 +4,17 @@ import Auth from "routes/Auth";
 import InputMatch from "routes/InputMatchData";
 import Home from "../routes/Home";
 
-const AppRouter= () =>{
+const AppRouter= ({isLoggedIn}) =>{
+
+{console.log("approuter reload");}
     return (
         <Router>
             <Switch>
                 <Route path="/inputmatch">
                     <InputMatch />
                 </Route>
-
-                <Route path="/login">
-                    <Auth />
-                </Route>
-
                 <Route exact path="/">
-                    <Home />
+                    <Home login={isLoggedIn} />
                 </Route>
             </Switch>
         </Router>

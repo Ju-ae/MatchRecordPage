@@ -1,12 +1,12 @@
 import { authService } from "fbase";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
+import Home from "./Home";
 
 const Auth = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [newAccount, setNewAccount] = useState(true);
-    const [error, setError] = useState("");
+    const [authRes, setAuthRes] = useState("로그인 필요");
 
     const onChange = (event) => {
         const { target: { name, value } } = event;
@@ -19,37 +19,25 @@ const Auth = () => {
     };
 
     const onSubmit = async (event) => {
-        event.preventDefault();
-        console.log("onsubmit");
         let data;
+        event.preventDefault();
         try {
-            if (newAccount) {
-                data = await createUserWithEmailAndPassword(authService, email, password);
-                setNewAccount(false);
-            } else {
-                data = await signInWithEmailAndPassword(authService, email, password);
-            }
+            data = await signInWithEmailAndPassword(authService, email, password);
+            setAuthRes("로그인 성공");
         } catch (error) {
-            setError(error.message);
+            setAuthRes("로그인 실패 " + error.message);
         }
     }
 
-    const toggleAccount = (event) =>{
-        setNewAccount(!newAccount);
-    }
-    
     return (
         <div>
+            <h1>{authRes}</h1>
             <form onSubmit={onSubmit}>
                 <input name="email" type="text" placeholder="email" required value={email} onChange={onChange} />
+                <br />
                 <input name="password" type="password" placeholder="password" required value={password} onChange={onChange} />
-                <input type="submit" value={newAccount ? "Create Account" : "Log In"} />
-                {error}
+                <input type="submit" value="Log In" />
             </form>
-            <span onClick={toggleAccount}>{newAccount? "Log In" : "Create Account"}</span>
-            <div>
-                <button>continue with google</button>x
-            </div>
         </div>
     );
 }
